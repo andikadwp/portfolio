@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useEffect } from "react"
 
 import type { ReactElement } from "react"
 
@@ -183,6 +183,16 @@ function ProjectCard({
   const [currentImageIdx, setCurrentImageIdx] = useState(0)
   const images = project.images || [project.image]
 
+  useEffect(() => {
+    if (images.length <= 1) return
+
+    const interval = setInterval(() => {
+      setCurrentImageIdx((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+    }, 4000) // Change image every 4 seconds
+
+    return () => clearInterval(interval)
+  }, [images.length])
+
   const handlePrevImage = (e: React.MouseEvent) => {
     e.stopPropagation()
     setCurrentImageIdx((prev) => (prev === 0 ? images.length - 1 : prev - 1))
@@ -199,7 +209,7 @@ function ProjectCard({
       className={`group relative overflow-hidden rounded-2xl transition-all duration-300 cursor-pointer ${
         isDark
           ? "bg-white/5 hover:bg-white/10"
-          : "bg-white/5 hover:bg-white/10 backdrop-blur-md shadow-lg border border-white/50"
+          : "bg-white/70 hover:bg-white/90 backdrop-blur-md shadow-lg border border-white/50"
       }`}
       onClick={onViewGallery}
     >
@@ -337,25 +347,25 @@ function LightboxGallery({
             <>
               <button
                 onClick={handlePrev}
-                className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center justify-center h-12 w-12 rounded-full bg-white/10 hover:bg-white/20 transition-all text-white hover:scale-110"
+                className="absolute left-6 top-1/2 -translate-y-1/2 flex items-center justify-center h-14 w-14 rounded-full bg-white/15 hover:bg-white/30 transition-all duration-300 text-white hover:scale-110 backdrop-blur-sm"
                 aria-label="Previous image"
               >
-                <ChevronLeft className="h-6 w-6" />
+                <ChevronLeft className="h-7 w-7" />
               </button>
 
               <button
                 onClick={handleNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center justify-center h-12 w-12 rounded-full bg-white/10 hover:bg-white/20 transition-all text-white hover:scale-110"
+                className="absolute right-6 top-1/2 -translate-y-1/2 flex items-center justify-center h-14 w-14 rounded-full bg-white/15 hover:bg-white/30 transition-all duration-300 text-white hover:scale-110 backdrop-blur-sm"
                 aria-label="Next image"
               >
-                <ChevronRight className="h-6 w-6" />
+                <ChevronRight className="h-7 w-7" />
               </button>
             </>
           )}
         </div>
 
         {images.length > 1 && (
-          <div className="mt-6 flex items-center justify-between">
+          <div className="mt-8 flex items-center justify-between">
             <div className="flex gap-2">
               {images.map((_, idx) => (
                 <button
