@@ -209,7 +209,7 @@ function ProjectCard({
       className={`group relative overflow-hidden rounded-2xl transition-all duration-300 cursor-pointer ${
         isDark
           ? "bg-white/5 hover:bg-white/10"
-          : "bg-white/70 hover:bg-white/90 backdrop-blur-md shadow-lg border border-white/50"
+          : "bg-white/50 hover:bg-white/10 backdrop-blur-md shadow-lg border border-white/50"
       }`}
       onClick={onViewGallery}
     >
