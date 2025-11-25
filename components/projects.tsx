@@ -233,7 +233,7 @@ function ProjectCard({
 
         {images.length > 1 && (
           <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-            {images.map((_, idx) => (
+            {images.map((_: string, idx: number) => (
               <div
                 key={idx}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
@@ -256,7 +256,7 @@ function ProjectCard({
         <p className={`mb-4 ${isDark ? "text-white/70" : "text-slate-600"}`}>{project.description}</p>
 
         <div className="mb-6 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
+          {project.tags.map((tag: string) => (
             <span
               key={tag}
               className={`rounded-full px-3 py-1 text-xs ${
@@ -367,7 +367,7 @@ function LightboxGallery({
         {images.length > 1 && (
           <div className="mt-8 flex items-center justify-between">
             <div className="flex gap-2">
-              {images.map((_, idx) => (
+              {images.map((_: string, idx: number) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentImageIdx(idx)}
