@@ -68,14 +68,14 @@ export default function Skills() {
               onClick={() => setActiveCategory(category)}
               className={`relative px-6 py-2 text-sm font-medium transition-all duration-300 ${
                 activeCategory === category
-                  ? "text-white"
+                  ? "text-slate-800 dark:text-white"
                   : "text-slate-600 dark:text-white/60 hover:text-slate-800 dark:hover:text-white/80"
               }`}
             >
               {activeCategory === category && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute inset-0 rounded-lg border border-white/10 bg-white/[0.05] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.08]"
+                  className="absolute inset-0 rounded-lg border border-slate-500/10 bg-slate-500/[0.05] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.08]"
                   transition={{ type: "spring", damping: 20, stiffness: 300 }}
                 />
               )}

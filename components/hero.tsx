@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowDown } from "lucide-react"
 import { useTheme } from "next-themes"
@@ -9,6 +9,59 @@ export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { resolvedTheme } = useTheme()
   const isDark = resolvedTheme === "dark"
+  const texts = [
+    "Full-Stack Developer",
+    "Modern Web Development",
+    "Scalable Application Design",
+    "Responsive Interface Design"
+  ]
+  const [typedText, setTypedText] = useState("")
+  const [phase, setPhase] = useState<"typing" | "deleting">("typing")
+  const [phraseIndex, setPhraseIndex] = useState(0)
+  const [charIndex, setCharIndex] = useState(0) 
+  
+  useEffect(() => {
+    const typingSpeed = 60
+    const deletingSpeed = 40
+
+    const pauseAtFull = 800
+    const pauseAtRestart = 250
+
+    let timer: ReturnType<typeof setTimeout>
+    const currentText = texts[phraseIndex]
+
+    if (phase === "typing") {
+      if (charIndex < currentText.length) {
+        timer = setTimeout(() => {
+          const nextCharIndex = charIndex + 1
+          setTypedText(currentText.slice(0, nextCharIndex))
+          setCharIndex(nextCharIndex)
+        }, typingSpeed)
+      } else {
+        timer = setTimeout(() => {
+          setPhase("deleting")
+        }, pauseAtFull)
+      }
+    } else {
+      if (charIndex > 1) {
+        timer = setTimeout(() => {
+          const nextCharIndex = charIndex - 1
+          setTypedText(currentText.slice(0, nextCharIndex))
+          setCharIndex(nextCharIndex)
+        }, deletingSpeed)
+      } else {
+        timer = setTimeout(() => {
+          const nextPhraseIndex = (phraseIndex + 1) % texts.length
+          setPhraseIndex(nextPhraseIndex)
+          setPhase("typing")
+          setCharIndex(0)
+          setTypedText("")
+        }, pauseAtRestart)
+      }
+    }
+
+    return () => clearTimeout(timer)
+  }, [phase, charIndex, phraseIndex, texts])
 
   return (
     <section
@@ -38,7 +91,7 @@ export default function Hero() {
           className="mb-6 inline-block rounded-full bg-gradient-to-r from-sky-400 to-violet-500 p-1"
         >
           <div className="rounded-full bg-white px-4 py-1.5 text-sm font-medium text-slate-800 dark:bg-black dark:text-white">
-            Full-Stack Developer
+            {typedText === "" ? "\u00A0" : typedText}
           </div>
         </motion.div>
 
@@ -48,8 +101,8 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="mb-6 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-5xl font-bold tracking-tight text-transparent dark:from-white dark:to-sky-300 sm:text-6xl md:text-7xl"
         >
-        <span className="block">Creating Digital</span>
-        <span className="block">Experiences</span>
+        <span className="block">Hello</span>
+        <span className="block">I&apos;m Andika</span>
         </motion.h1>
 
         <motion.p
@@ -58,7 +111,7 @@ export default function Hero() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mx-auto mb-10 max-w-lg text-lg text-slate-600 dark:text-white/70"
         >
-          I build modern, responsive web applications with cutting-edge technologies and pixel-perfect design.
+          I build modern, responsive web applications with clean architecture and great user experience.
         </motion.p>
 
         <motion.div

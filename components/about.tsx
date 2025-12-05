@@ -56,7 +56,7 @@ export default function About() {
             <div className="absolute -bottom-6 -right-6 h-40 w-40 rounded-2xl bg-gradient-to-br from-sky-400 to-violet-500 p-1">
               <div className={`h-full w-full rounded-2xl ${isDark ? "bg-black" : "bg-white"} p-4`}>
                 <div className="flex h-full flex-col items-center justify-center text-center">
-                  <div className={`text-4xl font-bold ${isDark ? "text-white" : "text-slate-800"}`}>5+</div>
+                  <div className={`text-4xl font-bold ${isDark ? "text-white" : "text-slate-800"}`}>2+</div>
                   <div className={`text-sm ${isDark ? "text-white/70" : "text-slate-600"}`}>Years of Experience</div>
                 </div>
               </div>
