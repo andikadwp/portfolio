@@ -68,23 +68,21 @@ export default function About() {
               About Me
             </h2>
             <h3 className="mb-6 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-3xl font-bold tracking-tight text-transparent dark:from-white dark:to-white/70 sm:text-4xl">
-              Crafting digital experiences with passion and precision
+              Let’s get to know me!
             </h3>
 
             <div className="mb-8 space-y-4 text-lg text-slate-600 dark:text-white/70">
               <p>
-                I'm a full-stack developer with a passion for creating beautiful, functional, and user-friendly web
-                applications. With over 5 years of experience in the industry, I've worked on a wide range of projects
-                from small business websites to large-scale enterprise applications.
+                Hi, I’m Andika — a full-stack developer with a passion for creating beautiful, functional, and user-friendly web
+                applications. With over 2 years of experience in the industry, I have contributed to the development of diverse products ranging from business platforms to large-scale enterprise systems.
               </p>
               <p>
-                My expertise includes React, Next.js, TypeScript, and modern CSS frameworks like Tailwind. I'm also
-                experienced with backend technologies including Node.js, Python, and various database systems.
+                I work with PHP and Laravel on the backend, and I enjoy building modern frontends with React, TypeScript, and Next.js. I also use modern CSS frameworks like Tailwind and JavaScript or Livewire to build clean and practical interfaces.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-3">
-              {["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Tailwind CSS"].map((tech) => (
+              {["PHP", , "Laravel", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"].map((tech) => (
                 <span
                   key={tech}
                   className={`rounded-full px-4 py-1.5 text-sm ${

@@ -13,28 +13,28 @@ import { useTheme } from "next-themes"
 const projects = [
   {
     id: 1,
-    title: "E-commerce Platform",
+    title: "Fingerspot.io",
     description:
-      "A modern e-commerce platform built with Next.js, featuring product filtering, cart functionality, and secure checkout.",
-    images: ["/ecommerce-dashboard.jpg", "/ecommerce-product-page.jpg", "/ecommerce-checkout.jpg"],
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
-    link: "#",
+    "A cloud-based attendance & HR platform that lets companies manage employee check-ins via biometric devices or mobile GPS/face recognition — with real-time tracking, multi-branch support, and automated reports.",
+    images: ["/fio-1.png", "/fio-2.png", "/fio-3.png", "/fio-4.png", "/fio-5.png", "/fio-6.png"],
+    tags: ["Laravel", "PHP", "Javascript", "CSS"],
+    link: "https://fingerspot.io",
   },
   {
     id: 2,
-    title: "Dashboard Analytics",
-    description: "Interactive dashboard with real-time analytics, data visualization, and user management features.",
-    images: ["/analytics-dashboard.png", "/analytics-charts.jpg", "/analytics-users.jpg"],
-    tags: ["React", "D3.js", "Firebase", "Material UI"],
-    link: "#",
+    title: "Fingerspot.io Landing",
+    description: "A responsive product landing page designed to showcase features, benefits, and solutions with clear messaging and conversion-focused layout.",
+    images: ["/landing-1.png", "/landing-2.png", "/landing-3.png", "/landing-4.png"],
+    tags: ["Laravel", "PHP", "Javascript", "CSS"],
+    link: "https://fingerspot.io",
   },
   {
     id: 3,
-    title: "Social Media App",
-    description: "Full-featured social media application with real-time messaging, post sharing, and user profiles.",
-    images: ["/social-feed.jpg", "/social-messaging.jpg", "/social-profile.jpg"],
-    tags: ["React Native", "Node.js", "Socket.io", "MongoDB"],
-    link: "#",
+    title: "Fingerspot Library",
+    description: "Fingerspot.io Library is a web-based platform for sharing company-related information, product updates, and technical insights, featuring interactive discussions",
+    images: ["/library-1.png", "/library-2.png", "/library-3.png", "/library-4.png"],
+    tags: ["Laravel", "PHP", "Javascript", "CSS"],
+    link: "https://library.fingerspot.net",
   },
   {
     id: 4,
@@ -96,10 +96,10 @@ export default function Projects(): ReactElement {
             Portfolio
           </h2>
           <h3 className="mb-6 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-3xl font-bold tracking-tight text-transparent dark:from-white dark:to-white/70 sm:text-4xl">
-            Featured Projects
+            Project Highlights
           </h3>
           <p className="mx-auto max-w-2xl text-lg text-slate-600 dark:text-white/70">
-            Explore my recent work and discover how I bring ideas to life with code and creativity.
+            A few projects I’ve built and shipped with previous teams.
           </p>
         </motion.div>
 
