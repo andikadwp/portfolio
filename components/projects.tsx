@@ -209,12 +209,12 @@ function ProjectCard({
       className={`group relative overflow-hidden rounded-2xl transition-all duration-300 cursor-pointer ${
         isDark
           ? "bg-white/5 hover:bg-white/10"
-          : "bg-white/50 hover:bg-white/10 backdrop-blur-md shadow-lg border border-white/50"
+          : "bg-white/5 hover:bg-white/10 backdrop-blur-md shadow-lg border border-white/5"
       }`}
       onClick={onViewGallery}
     >
       <div
-        className={`absolute inset-0 rounded-2xl ring-1 ring-inset ${isDark ? "ring-white/10" : "ring-slate-200/50"}`}
+        className={`absolute inset-0 rounded-2xl ring-1 ring-inset ${isDark ? "ring-white/10" : "ring-slate-200/5"}`}
       />
 
       <div className="relative aspect-video overflow-hidden">
