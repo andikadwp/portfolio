@@ -5,28 +5,30 @@ import { motion, useScroll, useTransform } from "framer-motion"
 
 const skillsData = {
   Frontend: [
-    { name: "React", level: 95, icon: "⚛️" },
-    { name: "Next.js", level: 90, icon: "▲" },
-    { name: "TypeScript", level: 85, icon: "🔷" },
-    { name: "Tailwind CSS", level: 90, icon: "🎨" },
     { name: "HTML/CSS", level: 95, icon: "🌐" },
+    { name: "React", level: 80, icon: "⚛️" },
+    { name: "Next.js", level: 80, icon: "▲" },
+    { name: "Tailwind CSS", level: 85, icon: "🎨" },
+    { name: "TypeScript", level: 80, icon: "🔷" },
   ],
   Backend: [
-    { name: "Node.js", level: 80, icon: "🟢" },
+    { name: "Laravel", level: 90, icon: "🍕" },
+    { name: "PHP", level: 90, icon: "🐘" },
     { name: "JavaScript", level: 90, icon: "⚡" },
     { name: "REST API", level: 85, icon: "🔌" },
-    { name: "Database", level: 80, icon: "💾" },
+    { name: "MySQL", level: 90, icon: "🗄️" },
   ],
   Tools: [
     { name: "Git", level: 90, icon: "🔀" },
     { name: "Figma", level: 85, icon: "🎯" },
-    { name: "VS Code", level: 90, icon: "💻" },
-    { name: "Docker", level: 75, icon: "🐳" },
+    { name: "Postman", level: 85, icon: "🧪" },
+    { name: "Terminal / Shell", level: 80, icon: "🖥️" },
   ],
   Design: [
     { name: "UI Design", level: 85, icon: "✨" },
     { name: "UX Design", level: 75, icon: "👤" },
     { name: "Responsive", level: 90, icon: "📱" },
+    { name: "Canva", level: 85, icon: "📐" },
   ],
 }
 
@@ -56,7 +58,7 @@ export default function Skills() {
             Skills & Technologies
           </h3>
           <p className="mx-auto max-w-2xl text-lg text-slate-600 dark:text-white/70">
-            My core competencies across different areas of web development.
+            A collection of the tools and technologies I work with to build web applications.
           </p>
         </motion.div>
 
